@@ -159,9 +159,12 @@
 
             // Function to handle button clicks
             function cancelInvoice() {
-                // Logic to clear invoice data if needed
-                localStorage.removeItem('invoiceData'); // Clear the invoice data from local storage
-                window.location.href = 'ProductsPage.html'; // Redirect to products page
+                if (confirm("Are you sure you want to cancel this invoice?")) {
+                    // Clear the invoice data from local storage
+                    localStorage.removeItem('invoiceData');
+                    // Redirect to products page
+                    window.location.href = 'ProductsPage.html';
+                }
             }
 
             function exitInvoice() {
