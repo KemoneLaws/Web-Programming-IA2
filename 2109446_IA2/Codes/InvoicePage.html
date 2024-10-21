@@ -60,7 +60,7 @@
 
         #invoice p {
             font-size: 1.1em; 
-            font-weight: bold; 
+            font-weight: normal; 
             text-align: right; 
         }
 
@@ -146,10 +146,10 @@
                 });
 
                 invoiceHTML += `</table>
-                                <p><strong>Subtotal:</strong> $${invoiceData.subtotal.toFixed(2)}</p>
-                                <p><strong>Taxes (15%):</strong> $${invoiceData.tax.toFixed(2)}</p>
-                                <p><strong>Discount(10% for orders over $10000):</strong>  $${invoiceData.discount.toFixed(2)}</p>
-                                <p><strong>Total:</strong> $${invoiceData.total.toFixed(2)}</p>`;
+                                <p><strong>Subtotal:</strong> <span style="margin-left: 50px;"> $${invoiceData.subtotal.toFixed(2)}</p>
+                                <p><strong>Taxes (15%):</strong> <span style="margin-left: 60px;"> $${invoiceData.tax.toFixed(2)}</p>
+                                <p><strong>Discount(10% for orders over $10000):</strong> <span style="margin-left: 80px;"> $${invoiceData.discount.toFixed(2)}</p>
+                                <p><strong>Total:</strong> <span style="margin-left: 50px;"> $${invoiceData.total.toFixed(2)}</p>`;
 
                 document.getElementById("invoice").innerHTML = invoiceHTML;
             }
