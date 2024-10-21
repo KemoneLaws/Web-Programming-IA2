@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title> Login Page </title>
+
+        <style>
+
+            body {
+                background-color: #ebebe0; 
+                 
+                text-align: center; 
+            }
+
+            h2 {
+                margin: 20px 0; 
+                color: #5c4f39; 
+                font-size: 1.8em;
+            }
+
+            form {
+                background-color: #ffffff; 
+                border-radius: 20px; 
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+                padding: 20px; 
+                max-width: 400px; 
+                margin: 0 auto; 
+
+                font-family: 'Garamond', serif; 
+                color: #333; 
+                text-align: center;
+            }
+
+            label {
+                display: block; 
+                margin: 0 0 5px; 
+                font-family: Verdana, sans-serif; 
+                text-align: left; 
+            }
+
+            input[type="text"],
+            input[type="password"] {
+                width: 80%; 
+                padding: 10px; 
+                border: 1px solid #ccc; 
+                border-radius: 4px; 
+                margin-bottom: 15px; 
+                font-size: 16px; 
+            }
+
+            input[type="submit"] {
+                background-color: #4CAF50; 
+                color: white; 
+                border: none; 
+                padding: 10px; 
+                border-radius: 5px; 
+                cursor: pointer; 
+                font-size: 16px; 
+                transition: background-color 0.3s; 
+            }
+
+            input[type="submit"]:hover {
+                background-color: #45a049; 
+            }
+
+            footer {
+            background-color: #85e085; 
+            color: #4d4d33; 
+            text-align: center; 
+            padding: 10px 0; 
+            width: 100%; 
+            position: relative; 
+            }
+
+            .footer-content {
+                width: 60%; 
+                margin: 0 auto; 
+            }
+
+            footer p {
+                margin: 5px 0; 
+                font-size: 0.9em; 
+            }
+
+
+        </style>
+
+
+
+        <script>
+            // Define sample username and password as constants
+            const VALID_USERNAME = "user123";
+            const VALID_PASSWORD = "pass1234";
+
+            // Track login attempts
+            let loginAttempts = 0;
+
+            function validateLogin() 
+            {
+                // Retrieve input values
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+
+
+                // Check if fields are filled
+                if (!username || !password) 
+                {
+                    alert("All fields are required!");
+                    return; 
+                }
+
+
+                // Check password length
+                if (password.length < 8) 
+                {
+                    alert("Password must be at least 8 characters long!");
+                    return; 
+                }
+
+
+                // Validate username and password
+                if (username === VALID_USERNAME && password === VALID_PASSWORD) 
+                {
+                    alert("Login successful!");
+                    window.location.href = "ProductsPage.html"; // Redirect to Products page
+                } 
+                else 
+                {
+                    loginAttempts++;
+                    alert("Incorrect username or password! Please try again.");
+                    
+                    // Limit to 3 attempts
+                    if (loginAttempts === 3) 
+                    {
+                        alert("Maximum login attempts reached. Redirecting to error page.");
+                        window.location.href = "ErrorPage.html";
+                    }
+                }
+            }
+
+            //Restrict user from accessing products page through other pages
+            function productsPageAccess(event)
+            {
+                event.preventDefault();
+                alert("YOU MUST FIRST LOG IN TO GAIN ACCESS TO THE PRODUCTS PAGE!");
+            }
+
+
+        </script>
+
+	</head>
+
+	<body bgcolor = "#ebebe0" link="#4d4d33" vlink="#4d4d33">
+
+        <img src = "../Assets/KemLogo.png" height="125" width="350" align="left" >
+
+		<table border= "0" align="center" height="125" width="70%" bgcolor="#85e085" cellspacing="10" cellpadding="25">
+		<tr align = "center">
+            <th> <a href="LoginPage.html" target="blank" style="font-size: 20px"> LOGIN </th>
+            <th  onclick="productsPageAccess(event)"> <a href="ProductsPage.html" target="blank" style="font-size: 20px"> PRODUCTS </th> 
+             
+            <th> <a href="AboutUsPage.html" target="blank" style="font-size: 20px"> ABOUT US </th> 
+        </tr>
+        </table></br></br>
+
+
+
+        <h2> LOGIN </h2>
+		
+		<form name = "form1" action="page.html" method = "post" onsubmit="event.preventDefault(); validateLogin();"> 
+
+			<label> Username: </label>
+			<input type = "text" id="username" name="textbox" maxlength="20" minlength="4" placeholder="Enter Username" required/> </br>
+           
+            <label> Password: </label>
+			<input type = "password" id="password" name="textbox1" minlength="8" placeholder="Enter Password" required/> </br>
+
+            <input type="submit" value="Login">
+        </form></br></br></br></br></br>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 Kemone's Organic Skincare. All rights reserved.</p></br>
+                <p> <u> Contact Us </u></p>
+                <p> Contact Number: (876)382-0452 </p>
+                <p> Email: kemonelaws12@gmail.com </p>
+            </div>
+        </footer>
+
+	</body>
+
+</html>

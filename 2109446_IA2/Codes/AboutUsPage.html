@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title> About Us Page </title>
+
+        <style>
+
+            body {
+                background-color: #ebebe0;
+            }
+
+
+            /* Styling for the paragraph container */
+            .info-container {
+                border: 2px solid #46bc46; 
+                border-radius: 99px;
+                padding: 20px; 
+                margin: 20px auto; 
+                width: 50%; 
+                background-color: #fff; 
+            }
+
+            /* Styling for the paragraphs */
+            .info-container p {
+                font-size: 1.2em; 
+                line-height: 1.5em; 
+                color: #000; 
+                margin: 15px 0; 
+                text-align: center; 
+            }
+
+            footer {
+            background-color: #85e085; 
+            color: #4d4d33; 
+            text-align: center; 
+            padding: 10px 0; 
+            width: 100%; 
+            position: relative; 
+            }
+
+            .footer-content {
+                width: 60%; 
+                margin: 0 auto; 
+            }
+
+            footer p {
+                margin: 5px 0; 
+                font-size: 0.9em; 
+            }
+
+
+    </style>
+
+        </style>
+
+
+
+        <script>
+
+
+            //Restrict user from accessing products page through other pages
+            function productsPageAccess(event)
+            {
+                event.preventDefault();
+                alert("PLEASE RETURN TO THE LOG IN PAGE AND LOG IN  TO GAIN ACCESS TO THE PRODUCTS PAGE!");
+            }
+
+        </script>
+
+	</head>
+
+	<body bgcolor = "#ebebe0" link="#4d4d33" vlink="#4d4d33">
+
+        <img src = "../Assets/KemLogo.png" height="125" width="350" align="left" >
+
+		<table border= "0" align="center" height="125" width="70%" bgcolor="#85e085" cellspacing="10" cellpadding="25">
+		<tr align = "center">
+            <th> <a href="LoginPage.html" target="blank" style="font-size: 20px"> LOGIN </th>
+            <th onclick="productsPageAccess(event)"> <a href="ProductsPage.html" target="blank" style="font-size: 20px"> PRODUCTS </th> 
+            
+            <th> <a href="AboutUsPage.html" target="blank" style="font-size: 20px"> ABOUT US </th> 
+        </tr>
+        </table></br></br></br>
+
+
+        
+
+
+        <div class="info-container">
+            <p>Kemone Althea Laws - 2109446</p>
+            <p>kemonelaws12@gmail.com</p>
+            <p>CIT2011 Individual Assignment 2 Monday 5pm to 7pm</p> </br>
+            <p>Click here to let us know your comments and queries ~<a href="mailto:kemonealaws@students.utech.edu.jm ?Subject=Comments and Queries" style="color: #155cb9;">kemonealaws@students.utech.edu.jm</a>~</p>
+        </div></br></br></br></br></br>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 Kemone's Organic Skincare. All rights reserved.</p></br>
+                <p> <u> Contact Us </u></p>
+                <p> Contact Number: (876)382-0452 </p>
+                <p> Email: kemonelaws12@gmail.com </p>
+            </div>
+        </footer>
+
+
+	</body>
+</html>
