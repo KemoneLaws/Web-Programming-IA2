@@ -146,10 +146,22 @@
                 });
 
                 invoiceHTML += `</table>
-                                <p><strong>Subtotal:</strong> <span style="margin-left: 60px;"> $${invoiceData.subtotal.toFixed(2)}</p>
-                                <p><strong>Taxes (15%):</strong> <span style="margin-left: 60px;"> $${invoiceData.tax.toFixed(2)}</p>
-                                <p><strong>Discount(10% for orders over $10000):</strong> <span style="margin-left: 85px;"> $${invoiceData.discount.toFixed(2)}</p>
-                                <p><strong>Total:</strong> <span style="margin-left: 50px;"> $${invoiceData.total.toFixed(2)}</p>`;
+                <div style="display: flex; justify-content: flex-end; line-height: 2; margin-top: 0;">
+                    <p style="flex: 0 0 200px; text-align: right; margin-right: 10px; margin-top: 0; margin-bottom: 0; white-space: nowrap;"><strong>Subtotal:</strong></p>
+                    <p style="flex: 0 0 100px; text-align: right; margin-top: 0; margin-bottom: 0;">$${invoiceData.subtotal.toFixed(2)}</p>
+                </div>
+                <div style="display: flex; justify-content: flex-end; line-height: 2; margin-top: 0;">
+                    <p style="flex: 0 0 200px; text-align: right; margin-right: 10px; margin-top: 0; margin-bottom: 0; white-space: nowrap;"><strong>Taxes (15%):</strong></p>
+                    <p style="flex: 0 0 100px; text-align: right; margin-top: 0; margin-bottom: 0;">$${invoiceData.tax.toFixed(2)}</p>
+                </div>
+                <div style="display: flex; justify-content: flex-end; line-height: 2; margin-top: 0;">
+                    <p style="flex: 0 0 200px; text-align: right; margin-right: 10px; margin-top: 0; margin-bottom: 0; white-space: nowrap;"><strong>Discount (10% for orders over $10000):</strong></p>
+                    <p style="flex: 0 0 100px; text-align: right; margin-top: 0; margin-bottom: 0;">$${invoiceData.discount.toFixed(2)}</p>
+                </div>
+                <div style="display: flex; justify-content: flex-end; line-height: 2; margin-top: 0;">
+                    <p style="flex: 0 0 200px; text-align: right; margin-right: 10px; margin-top: 0; margin-bottom: 0; white-space: nowrap;"><strong>Total:</strong></p>
+                    <p style="flex: 0 0 100px; text-align: right; margin-top: 0; margin-bottom: 0;">$${invoiceData.total.toFixed(2)}</p>
+                </div>`;
 
                 document.getElementById("invoice").innerHTML = invoiceHTML;
             }
